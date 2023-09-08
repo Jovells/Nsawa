@@ -1,12 +1,14 @@
 import { logo } from "@/assets";
 import K from "@/constants";
 import Section from "../layouts/Section";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 
 import SideBar from "./SideBar";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full fixed top-0 bg-[#471AA0] z-40 ">
       <Section>
@@ -25,8 +27,11 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <Button className="bg-white text-[#471AA0] px-6 hover:bg-black shadow-md hover:text-white">
-              Donate
+            <Button
+              className="bg-white text-[#471AA0] px-6 hover:bg-black shadow-md hover:text-white font-bold"
+              onClick={() => navigate("/start-here")}
+            >
+              Sign in
             </Button>
             <SideBar />
           </div>

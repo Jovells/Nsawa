@@ -10,17 +10,15 @@ const Footer = () => {
         <Section>
           <div className="py-32 flex flex-col items-center text-center z-10">
             <h2 className="font-mono text-white  ">
-              Every donation makes an impact
+              Stay updated with news in the ecosystem
             </h2>
-            <h3 className="text-[#BDBDBD] font-semibold ">
-              For Charities and Grant donor organizations
-            </h3>
-            <div className="flex gap-5 mt-10">
-              <Button className="bg-[#471AA0] px-6 hover:bg-black shadow-md">
-                Donate now
-              </Button>
-              <Button className="bg-[#252B42] border px-6 hover:bg-black shadow-md ">
-                Register for free
+
+            <div className="flex flex-col items-center gap-5 mt-10 ">
+              <h3 className="text-[#BDBDBD] font-semibold ">
+                Subscribe to our Newsletter{" "}
+              </h3>
+              <Button className="text-[#471AA0] bg-white px-6 hover:bg-black hover:text-white shadow-md lg:w-2/5 font-bold">
+                Subscribe
               </Button>
             </div>
           </div>
