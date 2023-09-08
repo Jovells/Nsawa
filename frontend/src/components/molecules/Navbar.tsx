@@ -3,8 +3,10 @@ import K from "@/constants";
 import Section from "../layouts/Section";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
+import W3Button from "../ui/web3button";
 
 import SideBar from "./SideBar";
+import { NetworkSwitch } from "../ui/network-switch";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,11 +29,13 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            <NetworkSwitch />
+            <W3Button />
             <Button
               className="bg-white text-[#471AA0] px-6 hover:bg-black shadow-md hover:text-white font-bold"
               onClick={() => navigate("/start-here")}
             >
-              Sign in
+              Sign up as Organization
             </Button>
             <SideBar />
           </div>

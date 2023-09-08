@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
+    "@web3modal/ethereum": "^2.7.1",
+    "@web3modal/react": "^2.7.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "ethers": "^6.7.1",
@@ -21,7 +23,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "viem": "^1.10.8",
+    "wagmi": "^1.4.1"
   },
   "devDependencies": {
     "@types/node": "^20.5.9",
