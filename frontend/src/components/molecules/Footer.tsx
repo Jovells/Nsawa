@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
       </div>
       <Section>
-        <div className="flex flex-col md:flex-row items-center justify-between  ">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 ">
           <img src={logoBlack} alt="logo" className="w-36" />
           <Social />
         </div>
