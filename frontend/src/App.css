@@ -57,3 +57,40 @@
     @apply bg-background text-foreground;
   }
 }
+h1 {
+  font-size: 58px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.hero {
+  background-image: url(/public/bg.png);
+  height: 1163px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 1440px; */
+}
+
+input {
+  border: 1px solid #d0d5dd;
+  padding: 0.5rem;
+}
+textarea {
+  border: 1px solid #d0d5dd;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}

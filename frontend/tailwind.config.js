@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import { fontFamily as _fontFamily } from "tailwindcss/defaultTheme";
 
 export const darkMode = ["class"];
 export const content = [
@@ -7,7 +8,11 @@ export const content = [
   "./app/**/*.{ts,tsx}",
   "./src/**/*.{ts,tsx}",
 ];
+
 export const theme = {
+  fontFamily: {
+    robotoSlab: ["Roboto Slab", ..._fontFamily.serif],
+  },
   container: {
     center: true,
     padding: "2rem",
