@@ -5,7 +5,7 @@ const News = () => {
   return (
     <Section>
       <div className="flex flex-col   md:mb-40  mb-20 text-center md:text-left">
-        <h3 className="text-[#471AA0]">Donation in Africa</h3>
+        <h3 className="text-[#471AA0]">DONATION IN AFRICA</h3>
         <h2>The Ghana ecosystem report</h2>
         <div className="flex flex-col  my-4 gap-4 ">
           <h4 className="text-[#737373] md:w-3/5">
