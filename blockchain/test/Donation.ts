@@ -5,14 +5,14 @@ import { DonationContract, DonationContract__factory } from "../typechain-types"
 
 
 
-describe("DonationContract",  function () {
+describe("DonationContract", function () {
 
   type PromiseType<T extends Promise<any>> = T extends Promise<infer U> ? U : never;
   type Signer = PromiseType<ReturnType<typeof ethers.getSigner>>;
-  let donationContract : DonationContract, owner: Signer, donor1 : Signer, donor2: Signer, beneficiary1: Signer, beneficiary2: Signer;
+  let donationContract: DonationContract, owner: Signer, donor1: Signer, donor2: Signer, beneficiary1: Signer, beneficiary2: Signer;
 
   beforeEach(async function () {
-    ({donationContract, owner, donor1, donor2, beneficiary1, beneficiary2} = await loadFixture(deployDonationFixture));
+    ({ donationContract, owner, donor1, donor2, beneficiary1, beneficiary2 } = await loadFixture(deployDonationFixture));
 
   });
 
@@ -20,8 +20,8 @@ describe("DonationContract",  function () {
     // Contracts are deployed using the first /account by default
     const [owner, donor1, donor2, signer1, signer2, signer3, signer4] = await ethers.getSigners();
     const Donation = await ethers.getContractFactory("DonationContract");
-    const donationContract : DonationContract = await Donation.deploy();
-    return {donationContract,  owner, donor1, donor2, beneficiary1, beneficiary2};
+    const donationContract: DonationContract = await Donation.deploy();
+    return { donationContract, owner, donor1, donor2, beneficiary1, beneficiary2 };
   }
 
   describe("Deployment", function () {
@@ -40,5 +40,5 @@ describe("DonationContract",  function () {
   })
 
 
-  
+
 })
