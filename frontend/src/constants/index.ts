@@ -1,16 +1,20 @@
 import {
+  coinbase,
   facebook,
   featOne,
   featThree,
   featTwo,
   linkedin,
+  metamask,
+  phantom,
   twitter,
+  walletconnect,
 } from "@/assets";
 
 export default {
   NAVLINKS: [
     { name: "Home", link: "/" },
-    { name: "App", link: "/" },
+    { name: "Product", link: "/auth" },
     { name: "Pricing", link: "/" },
     { name: "Contact", link: "/" },
   ],
@@ -38,5 +42,11 @@ export default {
     { name: "twitter", icon: twitter },
     { name: "facebook", icon: facebook },
     { name: "linkedin", icon: linkedin },
+  ],
+  WALLETS: [
+    { icon: metamask, name: "Metamask" },
+    { icon: phantom, name: "Phantom" },
+    { icon: coinbase, name: "Coinbase" },
+    { icon: walletconnect, name: "WalletConnect" },
   ],
 };

@@ -10,6 +10,10 @@ import navIcon from "./nav-icon.png";
 import facebook from "./facebook.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.png";
+import metamask from "./metamask.png";
+import phantom from "./phantom.png";
+import coinbase from "./coinbase.png";
+import walletconnect from "./walletconnect.png";
 
 export {
   logo,
@@ -24,4 +28,8 @@ export {
   facebook,
   linkedin,
   twitter,
+  metamask,
+  phantom,
+  coinbase,
+  walletconnect,
 };

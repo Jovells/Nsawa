@@ -5,12 +5,12 @@ import Vision from "./components/Vision";
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <>
       <Hero />
       <Features />
       <Vision />
       <NewsLetter />
-    </div>
+    </>
   );
 };
 
