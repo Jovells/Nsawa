@@ -12,8 +12,8 @@ const Hero = () => {
             Empower your giving with transparency and impact through blockchain
             innovation.
           </h4>
-          <Button className="bg-white text-[#471AA0] text-xl my-12 hover:bg-black shadow-md hover:text-white px-6">
-            Start here
+          <Button className="bg-white text-[#471AA0] text-xl my-12 hover:bg-black shadow-md hover:text-white px-6 font-bold">
+            Donate
           </Button>
           <img src={macLanding} alt="computer" className="w-[1100px]  mt-3" />
         </div>

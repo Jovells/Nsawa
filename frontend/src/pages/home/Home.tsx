@@ -1,6 +1,6 @@
 import Features from "./components/Features";
 import Hero from "./components/Hero";
-import NewsLetter from "./components/NewsLetter";
+import News from "./components/News";
 import Vision from "./components/Vision";
 
 const Home = () => {
@@ -9,7 +9,7 @@ const Home = () => {
       <Hero />
       <Features />
       <Vision />
-      <NewsLetter />
+      <News />
     </>
   );
 };
