@@ -14,6 +14,7 @@ import metamask from "./metamask.png";
 import phantom from "./phantom.png";
 import coinbase from "./coinbase.png";
 import walletconnect from "./walletconnect.png";
+import connect from "./connect.svg";
 
 export {
   logo,
@@ -32,4 +33,5 @@ export {
   phantom,
   coinbase,
   walletconnect,
+  connect,
 };

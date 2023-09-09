@@ -8,4 +8,8 @@ const provider = new ethers.WebSocketProvider(
   }`,
 );
 
-export const donation = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+export const nsawaContract = new ethers.Contract(
+  CONTRACT_ADDRESS,
+  ABI,
+  provider,
+);

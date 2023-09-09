@@ -1,6 +1,5 @@
 import { MenuToggle } from "./MenuToggle";
 import { motion, useCycle } from "framer-motion";
-import K from "@/constants";
 import { Link } from "react-router-dom";
 
 const itemsVariants = {
@@ -45,11 +44,20 @@ const SideBar = () => {
           isOpen ? "flex" : "hidden"
         } flex-col gap-5 text-[#471AA0] absolute top-16 right-0 bg-white px-10 py-4 z-50 items-center shadow-md`}
       >
-        {K.NAVLINKS.map((item) => (
-          <motion.li variants={itemVariant} whileHover={{ scale: 1.1 }}>
-            <Link to={item.link}>{item.name}</Link>
-          </motion.li>
-        ))}
+        <motion.li variants={itemVariant} whileHover={{ scale: 1.1 }}>
+          <Link to="/" className="hover:scale-110 hover:text-white/90">
+            Home
+          </Link>
+        </motion.li>
+        <motion.li variants={itemVariant} whileHover={{ scale: 1.1 }}>
+          <Link
+            to="/auth"
+            state={{ from: { pathname: "/campaigns" } }}
+            className="hover:scale-110 hover:text-white/90"
+          >
+            View campaigns
+          </Link>
+        </motion.li>
       </motion.ul>
     </motion.div>
   );

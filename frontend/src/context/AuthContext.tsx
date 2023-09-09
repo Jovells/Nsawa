@@ -12,7 +12,7 @@ type AuthContextType = {
     connect: () => Promise<string[] | null>;
     addChain: (parameters: AddEthereumChainParameter) => Promise<void>;
     switchChain: (chainId: string) => Promise<void>;
-    ethereum?: unknown;
+    ethereum?: never;
   };
 
 const AuthContext = createContext({

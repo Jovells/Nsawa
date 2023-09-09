@@ -14,9 +14,7 @@ import {
 export default {
   NAVLINKS: [
     { name: "Home", link: "/" },
-    { name: "Product", link: "/auth" },
-    { name: "Pricing", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "View campaigns", link: "/campaigns" },
   ],
   FEATURES: [
     {
