@@ -114,7 +114,7 @@ contract DonationContract {
         string memory description,
         string memory website,
         string memory logo
-    ) external onlyOwner {
+    ) external notEmergencyStopped{
         ++organisationCounter;
         organisations[organisationCounter].signers = signers;
         organisations[organisationCounter].description = description;
@@ -130,11 +130,11 @@ contract DonationContract {
         );
     }
 
-    function transferNSWTokens(
+    function transferNSWTokens (
         uint donationId,
         address donor,
         uint amount
-    ) public {
+    ) internal{
         uint256 reward = tokenDistributiontThresholds[0];
         uint256[] memory thresholds = new uint256[](5);
 
