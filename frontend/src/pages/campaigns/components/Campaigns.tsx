@@ -2,8 +2,10 @@
 import { avatar } from "@/assets";
 import Section from "@/components/layouts/Section";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Campaign = ({ campaigns }: { campaigns: [] }) => {
+  const navigate = useNavigate();
   return (
     <Section>
       <div className="flex flex-wrap justify-center gap-16  my-12">
@@ -25,7 +27,16 @@ const Campaign = ({ campaigns }: { campaigns: [] }) => {
                 Total amount raised
               </div>
 
-              <Button className="w-full bg-[#471AA0] my-4">Donate</Button>
+              <Button
+                className="w-full bg-[#471AA0] my-4"
+                onClick={() =>
+                  navigate("/auth", {
+                    state: { from: { pathname: "/donate" } },
+                  })
+                }
+              >
+                Donate
+              </Button>
             </div>
           </div>
         ))}

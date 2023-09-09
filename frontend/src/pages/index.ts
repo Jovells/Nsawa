@@ -6,3 +6,4 @@ export { default as MultisigAccount } from "./signIn/MultisigAccount";
 export { default as Campaigns } from "./campaigns/Dashboard";
 
 export { default as Auth } from "./Auth";
+export { default as Donate } from "./donate/Donate";

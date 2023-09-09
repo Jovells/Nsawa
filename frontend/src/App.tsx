@@ -9,6 +9,7 @@ import {
   MultisigAccount,
   Auth,
   Campaigns,
+  Donate,
 } from "./pages";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/campaigns" element={<Campaigns />} />
       </Route>
       <Route path="/auth" element={<Auth />} />
+      <Route path="/donate" element={<Donate />} />
     </Routes>
   );
 }

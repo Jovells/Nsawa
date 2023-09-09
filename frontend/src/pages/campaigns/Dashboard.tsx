@@ -26,9 +26,9 @@ const Dashboard = () => {
       ) : (
         <div className="hidden flex-col md:flex">
           <div className="flex-1 space-y-5 p-8 pt-28">
-            <h2 className="text-5xl font-bold tracking-tight  text-[#471AA0] mb-8 font-robotoSlab ">
+            <h1 className="md:text-center font-bold tracking-tight  text-[#471AA0] mb-10  ">
               #Nsawa Campaigns
-            </h2>
+            </h1>
 
             <div className="space-y-7">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
