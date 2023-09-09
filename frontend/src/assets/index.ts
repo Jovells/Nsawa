@@ -15,6 +15,8 @@ import phantom from "./phantom.png";
 import coinbase from "./coinbase.png";
 import walletconnect from "./walletconnect.png";
 import connect from "./connect.svg";
+import avatar from "./avatar.png";
+import transfer from "./transfer.svg";
 
 export {
   logo,
@@ -34,4 +36,6 @@ export {
   coinbase,
   walletconnect,
   connect,
+  avatar,
+  transfer,
 };

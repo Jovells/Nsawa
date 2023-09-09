@@ -1,7 +1,12 @@
 import { useAuth } from "@/context/AuthContext";
 
-
-const MultiSignForm = ({ cosigner, setCosigner }) => {
+const MultiSignForm = ({
+  cosigner,
+  setCosigner,
+}: {
+  cosigner?: string;
+  setCosigner: () => void;
+}) => {
   const { ethereum } = useAuth();
 
   return (
@@ -9,11 +14,23 @@ const MultiSignForm = ({ cosigner, setCosigner }) => {
       <div className="flex flex-col w-full mt-5 md:w-1/2">
         <div className="flex flex-col md:text-left gap-2 my-5">
           <label className="text-[#471AA0]">Wallet Address</label>
-          <input disabled placeholder="Address 1" value={ethereum?.selectedAddress || ""} type="text" className=" rounded-md" />
+          <input
+            disabled
+            placeholder="Address 1"
+            value={ethereum?.selectedAddress || ""}
+            type="text"
+            className=" rounded-md"
+          />
         </div>
         <div className="flex flex-col md:text-left gap-2 my-5">
           <label className="text-[#471AA0]">Wallet Address</label>
-          <input placeholder="Address 2" value={cosigner} onChange={(e) => setCosigner(e.target.value)} type="text" className=" rounded-md" />
+          <input
+            placeholder="Address 2"
+            value={cosigner}
+            onChange={(e) => setCosigner(e.target.value)}
+            type="text"
+            className=" rounded-md"
+          />
         </div>
       </div>
       <div className="flex flex-col items-center md:text-left md:items-start gap-2">

@@ -18,7 +18,7 @@ const Hero = () => {
             <Button
               className="bg-white text-[#471AA0] text-3xl my-12 hover:bg-black shadow-md hover:text-white px-6 py-6 font-bold"
               onClick={() =>
-                navigate("/auth", {
+                navigate("/campaigns", {
                   state: { from: { pathname: "/campaigns" } },
                 })
               }

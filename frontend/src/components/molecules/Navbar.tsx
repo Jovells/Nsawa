@@ -6,7 +6,6 @@ import { Web3Button } from "@web3modal/react";
 import { NetworkSwitch } from "../ui/network-switch";
 
 const Navbar = () => {
-
   return (
     <div className="w-full fixed top-0 bg-[#471AA0] z-40 ">
       <Section>
@@ -15,15 +14,14 @@ const Navbar = () => {
             <img src={logo} alt="log" className="w-36" />
           </Link>
 
-
           <div className="flex gap-8 items-center">
             <div className="hidden lg:flex flex-row md:gap-10 text-white cursor-pointer items-center">
-              {/* <Link to="/" className="hover:scale-110 hover:text-white/90">
+              <Link to="/" className="hover:scale-110 hover:text-white/90">
                 Home
-              </Link> */}
+              </Link>
               <Link
-                to="/auth"
-                state={{ from: { pathname: "/campaigns" } }}
+                to="/campaigns"
+                // state={{ from: { pathname: "/campaigns" } }}
                 className="hover:scale-110 hover:text-white/90"
               >
                 View campaigns
@@ -31,12 +29,7 @@ const Navbar = () => {
             </div>
             <NetworkSwitch />
             <Web3Button />
-            {/* <Button
-              className="bg-white text-[#471AA0] px-6 hover:bg-black shadow-md hover:text-white font-bold"
-              onClick={() => navigate("/start-here")}
-            >
-              Create a campaign
-            </Button> */}
+
             <SideBar />
           </div>
         </div>

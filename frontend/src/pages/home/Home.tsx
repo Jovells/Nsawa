@@ -1,3 +1,4 @@
+import NsawaCampaigns from "./components/Campaigns";
 import Features from "./components/Features";
 import Hero from "./components/Hero";
 import News from "./components/News";
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <Features />
       <Vision />
+      <NsawaCampaigns />
       <News />
     </>
   );

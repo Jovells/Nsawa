@@ -8,8 +8,9 @@ import {
   SetUpOrg,
   MultisigAccount,
   Auth,
+  Campaigns,
+  Donate,
 } from "./pages";
-import Campaigns from "./pages/campaigns/Campaigns";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/campaigns" element={<Campaigns />} />
       </Route>
       <Route path="/auth" element={<Auth />} />
+      <Route path="/donate" element={<Donate />} />
     </Routes>
   );
 }
