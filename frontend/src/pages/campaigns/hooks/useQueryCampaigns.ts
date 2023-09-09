@@ -20,7 +20,9 @@ const useQueryCampaigns = () => {
         const signer = await provider.getSigner();
 
         const fetchedOrganisations = await //@ts-ignore
-        nsawaContract.organisations();
+        nsawaContract.connect(signer).getAmountReceived(0);
+        // const fetchedOrganisations = await //@ts-ignore
+        // nsawaContract.connect(signer).organisations(id, campaign);
 
         console.log(await fetchedOrganisations);
 
@@ -50,7 +52,6 @@ const useQueryCampaigns = () => {
 
   return {
     campaigns,
-
     totalDonations,
     totalOrganisations,
     loading,
