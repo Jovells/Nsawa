@@ -35,8 +35,29 @@ describe("DonationContract", function () {
     });
   });
 
-  describe("Donation", function () {
+  // describe("Token Distribution", function () {
+  //   it('should be able to distribute tokens', async function () {
+  //     await donationContract.distributeTokens();
+  //     expect(await donationContract.tokenDistributiontThresholds(0)).to.equal(BigInt('100'));
+  //     expect(await donationContract.tokenDistributiontThresholds(1)).to.equal(BigInt('10000'));
+  //     expect(await donationContract.tokenDistributiontThresholds(2)).to.equal(BigInt('1000000'));
+  //   })
+  // })
 
+  describe("Donation", function () {
+    it('should allow be able to add organisation', async function () {
+      // Define the array of signers to pass as an argument
+      const signers = [donor1.address, donor2.address];
+
+      // Encode the array using the defaultAbiCoder
+      // const encodedSigners = ethers.AbiCoder.defaultAbiCoder().encode(["address[]"], [signers]);
+
+      // Call the addOrganisation function with the encoded array as an argument
+      await donationContract.addOrganisation(signers, "Organisation Name", "Organisation Description", "Organisation Website", "Organisation Logo");
+      console.log(await donationContract.organisations(0));
+      expect(await donationContract.getAmountOganisationSigners(1)).to.deep.equal(signers)
+
+    })
   })
 
 

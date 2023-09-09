@@ -7,4 +7,6 @@ contract NSWToken is ERC20 {
     constructor(uint initialSupply) ERC20("Nsawa", "NSW") {
         _mint(msg.sender, initialSupply);
     }
+
+
 }

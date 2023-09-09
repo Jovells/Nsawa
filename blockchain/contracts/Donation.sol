@@ -2,6 +2,9 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "./NSWToken.sol";
+
+import "hardhat/console.sol";
 
 contract DonationContract {
     address public owner;
@@ -41,7 +44,7 @@ contract DonationContract {
         uint256 timestamp
     );
     event AddedOrganisation(
-        uint organnisationId,
+        uint organisationId,
         string name,
         string description,
         string website,
@@ -88,6 +91,14 @@ contract DonationContract {
         return organisations[organisationId].amountReceived;
     }
 
+    function getAmountOganisationSigners(
+        uint organisationId
+    ) external view  returns (address[] memory){
+        // string[] memory organisationDetails = new uint[](6);
+
+        return organisations[organisationId].signers;
+    }
+
     function donate(
         string memory _message,
         uint organisationId
@@ -116,6 +127,9 @@ contract DonationContract {
         string memory logo
     ) external notEmergencyStopped{
         ++organisationCounter;
+        // for (uint i = 0; i < signers.length; i++) {
+        //     organisations[organisationCounter].signers[i] = signers[i]; 
+        // }
         organisations[organisationCounter].signers = signers;
         organisations[organisationCounter].description = description;
         organisations[organisationCounter].logo = logo;
@@ -147,13 +161,14 @@ contract DonationContract {
         }
 
         // Load the ERC20 token contract instance using its address
-        IERC20 token = IERC20(0x00e2A9608C621F27CC61cc27C7423a30E5d475D4);
+        IERC20 token = IERC20(0x5FbDB2315678afecb367f032d93F642f64180aa3);
+        console.log("token address: %s", token.totalSupply());
+        // token.transferFrom(owner, donor, reward);
 
-        // Transfer the specified amount of tokens from the donor to the contract
-        require(
-            token.transferFrom(owner, donor, reward),
-            "Token transfer failed"
-        );
+        // require(
+        //     token.transferFrom(owner, donor, reward),
+        //     "Token transfer failed"
+        // );
 
         // Emit a Transfer event to log the token transfer
         emit NsawaTransfer(donationId, donor, amount);
