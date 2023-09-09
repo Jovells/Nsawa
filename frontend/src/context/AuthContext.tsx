@@ -41,9 +41,9 @@ export const AuthContextProvider = ({
       if (props.ethereum) {
         const ethprovider = new ethers.BrowserProvider(props.ethereum);
         const newSigner = await ethprovider.getSigner();
-        // setConnectedContract(donation.connect(newSigner));
-        // setProvider(ethprovider);
-        setSigner(signer);
+        setConnectedContract(donation.connect(newSigner));
+        setProvider(ethprovider);
+        setSigner(newSigner);
       }
     }
     init();
@@ -52,8 +52,9 @@ export const AuthContextProvider = ({
     <AuthContext.Provider
       value={{
         isAuthenticated,
-        // provider,
-        // connectedContract,
+        provider,
+        signer,
+        connectedContract,
         ...props,
       }}
     >

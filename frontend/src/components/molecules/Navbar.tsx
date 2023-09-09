@@ -4,12 +4,23 @@ import Section from "../layouts/Section";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../ui/button";
 import W3Button from "../ui/web3button";
-
 import SideBar from "./SideBar";
 import { NetworkSwitch } from "../ui/network-switch";
+import { useAuth } from "@/context/AuthContext";
+import { useEffect } from "react"
+import { ethers } from "ethers";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { ethereum } = useAuth()
+  const ethprovider = new ethers.BrowserProvider(ethereum);
+
+  useEffect(() => {
+    if (ethereum) {
+      ethprovider.getSigner();
+    }
+  }, [ethereum])
 
   return (
     <div className="w-full fixed top-0 bg-[#471AA0] z-40 ">
