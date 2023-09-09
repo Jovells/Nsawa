@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useMetaMask } from "metamask-react";
 import {
   AddEthereumChainParameter,
@@ -10,12 +11,13 @@ import { ethers } from "ethers";
 
 type AuthContextType = {
   isAuthenticated: boolean;
+  provider: never;
 } & MetaMaskState & {
-  connect: () => Promise<string[] | null>;
-  addChain: (parameters: AddEthereumChainParameter) => Promise<void>;
-  switchChain: (chainId: string) => Promise<void>;
-  ethereum?: unknown;
-};
+    connect: () => Promise<string[] | null>;
+    addChain: (parameters: AddEthereumChainParameter) => Promise<void>;
+    switchChain: (chainId: string) => Promise<void>;
+    ethereum?: never;
+  };
 
 const AuthContext = createContext({
   isAuthenticated: false,
@@ -32,17 +34,20 @@ export const AuthContextProvider = ({
     props.chainId && props.status === "connected" && props.account,
   );
 
-  const [provider, setProvider] = useState();
-  const [signer, setSigner] = useState();
-  const [connectedContract, setConnectedContract] = useState();
+  const [provider, setProvider] = useState<never>();
+  const [signer, setSigner] = useState<never>();
+  const [connectedContract, setConnectedContract] = useState<never>();
 
   useEffect(() => {
     async function init() {
       if (props.ethereum) {
         const ethprovider = new ethers.BrowserProvider(props.ethereum);
         const newSigner = await ethprovider.getSigner();
+        //@ts-ignore
         setConnectedContract(nsawaContract.connect(newSigner));
+        //@ts-ignore
         setProvider(ethprovider);
+        //@ts-ignore
         setSigner(newSigner);
       }
     }
@@ -52,6 +57,7 @@ export const AuthContextProvider = ({
     <AuthContext.Provider
       value={{
         isAuthenticated,
+        //@ts-ignore
         provider,
         signer,
         connectedContract,

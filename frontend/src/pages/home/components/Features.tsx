@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Features = () => {
   return (
-    <div className="flex flex-col items-center md:mb-40 mx-10 mb-20  text-center">
+    <div className="flex flex-col items-center   text-center">
       <h2>AMAZING FEATURES</h2>
       <h4 className="text-[#737373]">Funds Traceable, Charities Accountable</h4>
       <div className="flex justify-evenly gap-12 my-12 flex-wrap">

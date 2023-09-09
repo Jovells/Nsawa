@@ -8,8 +8,8 @@ import {
   SetUpOrg,
   MultisigAccount,
   Auth,
+  Campaigns,
 } from "./pages";
-import Campaigns from "./pages/campaigns/Campaigns";
 
 function App() {
   return (
