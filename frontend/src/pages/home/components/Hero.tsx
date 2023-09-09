@@ -14,16 +14,24 @@ const Hero = () => {
             Empower your giving with transparency and impact through blockchain
             innovation.
           </h4>
-          <Button
-            className="bg-white text-[#471AA0] text-3xl my-12 hover:bg-black shadow-md hover:text-white px-6 py-6 font-bold"
-            onClick={() =>
-              navigate("/auth", {
-                state: { from: { pathname: "/campaigns" } },
-              })
-            }
-          >
-            Donate Now
-          </Button>
+          <div className="flex gap-5">
+            <Button
+              className="bg-white text-[#471AA0] text-3xl my-12 hover:bg-black shadow-md hover:text-white px-6 py-6 font-bold"
+              onClick={() =>
+                navigate("/auth", {
+                  state: { from: { pathname: "/campaigns" } },
+                })
+              }
+            >
+              Donate Now
+            </Button>
+            <Button
+              className="bg-[#ADFF2F] text-[#471AA0] text-3xl my-12 hover:bg-black shadow-md hover:text-white px-6 py-6 font-bold"
+              onClick={() => navigate("/start-here")}
+            >
+              Create a campaign
+            </Button>
+          </div>
           <img src={macLanding} alt="computer" className="w-[1100px]  mt-3" />
         </div>
       </Section>

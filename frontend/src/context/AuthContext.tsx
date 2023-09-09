@@ -4,16 +4,18 @@ import {
   MetaMaskState,
 } from "metamask-react/lib/metamask-context";
 import React from "react";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import { nsawaContract } from "@/contract";
+import { ethers } from "ethers";
 
 type AuthContextType = {
   isAuthenticated: boolean;
 } & MetaMaskState & {
-    connect: () => Promise<string[] | null>;
-    addChain: (parameters: AddEthereumChainParameter) => Promise<void>;
-    switchChain: (chainId: string) => Promise<void>;
-    ethereum?: never;
-  };
+  connect: () => Promise<string[] | null>;
+  addChain: (parameters: AddEthereumChainParameter) => Promise<void>;
+  switchChain: (chainId: string) => Promise<void>;
+  ethereum?: unknown;
+};
 
 const AuthContext = createContext({
   isAuthenticated: false,
@@ -29,10 +31,30 @@ export const AuthContextProvider = ({
   const isAuthenticated = Boolean(
     props.chainId && props.status === "connected" && props.account,
   );
+
+  const [provider, setProvider] = useState();
+  const [signer, setSigner] = useState();
+  const [connectedContract, setConnectedContract] = useState();
+
+  useEffect(() => {
+    async function init() {
+      if (props.ethereum) {
+        const ethprovider = new ethers.BrowserProvider(props.ethereum);
+        const newSigner = await ethprovider.getSigner();
+        setConnectedContract(nsawaContract.connect(newSigner));
+        setProvider(ethprovider);
+        setSigner(newSigner);
+      }
+    }
+    init();
+  }, [props.ethereum, signer]);
   return (
     <AuthContext.Provider
       value={{
         isAuthenticated,
+        provider,
+        signer,
+        connectedContract,
         ...props,
       }}
     >
