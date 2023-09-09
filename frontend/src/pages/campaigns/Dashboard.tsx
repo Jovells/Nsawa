@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import useQueryCampaigns from "./hooks/useQueryCampaigns";
 import { ThreeDots } from "react-loader-spinner";
 import Campaigns from "./components/Campaigns";
+// import TestComponent from "./TestComponent";
 
 const Dashboard = () => {
   const { totalOrganisations, totalDonations, campaigns, loading } =
@@ -108,6 +109,7 @@ const Dashboard = () => {
               <div className="min-h-screen">
                 {/* @ts-ignore  */}
                 <Campaigns campaigns={campaigns} />
+                {/* <TestComponent /> */}
               </div>
             </div>
           </div>
